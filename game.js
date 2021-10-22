@@ -23,10 +23,9 @@ function playerSelect() {
 
 
 //loop the rockps(), add two counters = 0, if return contains substring win: repeat until one counter reaches 5, gratulate winner  (no change to earlier rockps() function version)
-//
 
 
-function gaem() {
+function gaem() {       //plays 5 rounds of RPS and announces the end result
     let playerScore = 0;
     let computerScore = 0;
     let i = 1;
