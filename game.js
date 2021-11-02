@@ -17,52 +17,17 @@ function computerSelect() {
 }
 
 function playerSelect() { 
-    let playerSelection = prompt("Choose Rock, Paper or Scissors!");
-    return playerSelection.toLowerCase() 
-}
-
-
-//loop the rockps(), add two counters = 0, if return contains substring win: repeat until one counter reaches 5, gratulate winner  (no change to earlier rockps() function version)
-
-
-function gaem() {       //plays 5 rounds of RPS and announces the end result
-    let playerScore = 0;
-    let computerScore = 0;
-    let i = 1;
-    while (i < 6) {
-       /* console.log("first i : " + i); */
-       let play = rockps(playerSelect(), computerSelect());
-        if (play === 1) {
-           
-            playerScore++;
-            /* 
-            console.log("i: " + i); */
-            console.log("Player score: " + playerScore + "   Computer score: " + computerScore + "    Rounds left: " + (5 - i));
-            i++;
-        } else if (play === 2) {
-         
-            computerScore++;
-           /* 
-            console.log("i: " + i); */
-            console.log("Player score: " + playerScore + "   Computer score: " + computerScore + "    Rounds left: " + (5 - i));
-            i++;
-        } else if (play === 3) {
-            console.log("Player score: " + playerScore + "   Computer score: " + computerScore + "    Rounds left: " + (5 - i));
-            i++;
-          }
-        }
-    if (playerScore > computerScore) {
-        alert("JOHNNY IS THE WINNNNNER!!!"); 
-        console.log("YOU ARE THE WIEner");
-    } else if (playerScore === computerScore) {
-        alert("Draw your attention!"); 
-        console.log("DRAW");
-    } else {
-        alert("Better success next time!!"); 
-        console.log("lost :(");
+    let playerSelection = document.querySelector('button.id');
+    if (playerSelection === 1) {
+        return "rock";
     }
-}   
-
+    else if (playerSelection === 2) {
+        return "paper";
+    }
+    else if (playerSelection === 3) {
+        return "scissors";
+    } 
+}
 
 function rockps(playerselection, computerselection) {
 
@@ -110,25 +75,3 @@ function rockps(playerselection, computerselection) {
         }
     }
     }
-
-
-
-      /*  function initGame() {
-
-    for(i = 0; i === 5; i++) {
-        rockps(playerSelect(), computerSelect());    
-   if (rockps(playerSelect(), computerSelect()) === 1) {
-    playerScore++;
-    console.log("Player score: " + playerScore + "\nComputer score: " + computerScore);
-   } else if (rockps(playerSelect(), computerSelect()) === 2) {
-    computerScore++;
-    console.log("Player score: " + playerScore + "\nComputer score: " + computerScore);
-   } else if (rockps(playerSelect(), computerSelect()) === 0) {
-    console.log("Player score: " + playerScore + "\nComputer score: " + computerScore);
-   }
-}} */
-
-
-        /* for(let i = 0; i === 5; i++) {
-            alert("stock");
-            rockps(playerSelect(), computerSelect());   */
