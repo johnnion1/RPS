@@ -60,7 +60,14 @@ function rockps(playerselection, computerselection) {
     }
     }
 
-    
+    const buttons = document.querySelectorAll('button');
+
+        buttons.forEach((button) => {
+
+            button.addEventListener('click', () => {
+                console.log(button.id);
+                rockps(button.id, computerSelect())});
+        });
      /*  let getselection = document.querySelector('button.id');
     if (getselection === 1) {
         playerselection = "rock";
