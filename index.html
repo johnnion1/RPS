@@ -5,13 +5,20 @@
         <meta charset="UTF-8">
         <style>
             body {
-                background-color:wheat;
+                background-color:rgb(233, 163, 33);
             }
+          
+            #container {
+                display:flex;
+                flex-flow:column;
+                
+            }
+            
             button {
                 width: 80px;
                 height: 60px;
-                background-color:violet;
-                border: 2px solid burlywood;
+                background-color:rgb(206, 41, 206);
+                border: 2px solid rgb(231, 134, 7);
             }
             button:hover {
                 background-color:darkviolet;
@@ -19,13 +26,19 @@
             button:active {
                 background-color:cadetblue;
             }
+            #scoreboard {
+                
+
+            }
         </style>
     </head>
     <body>
 
     <script src="game.js" defer></script>
-   
+
+    <div id="scoreboard"><p>Hello, hands against me</p></div>
     <div id="container">
+       
         <button id="rock">Rock</button> 
         <button id="paper">Paper</button> 
         <button id="scissors">Scissors</button> 
