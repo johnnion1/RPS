@@ -40,32 +40,41 @@ function rockps(playerselection, computerselection) {
 
     if (computerselection === "Rock") {
         if (playerselection === "rock") {
+            messageBoard.textContent = "It's a draw, Rock and Rock.";
             return;
         } else if (playerselection === "paper") {
             playerScore++; 
+            messageBoard.textContent = "You win! Paper beats Rock!";
             return;
         } else if (playerselection === "scissors") {
             computerScore++;
+            messageBoard.textContent = "You loose! Rock beats Scissors!";
             return;
         }
     } else if (computerselection === "Paper") {
         if (playerselection === "rock") {
             computerScore++;
+            messageBoard.textContent = "You loose! Paper beats Rock!";
             return;
         } else if (playerselection === "paper") {
+            messageBoard.textContent = "It's a draw, Paper and Paper.";
            return;
         } else if (playerselection === "scissors") {
             playerScore++;
+            messageBoard.textContent = "You win! Scissors beats Paper!";
            return;
         }
     } else if (computerselection === "Scissors") {
         if (playerselection === "rock") {
             playerScore++;
+            messageBoard.textContent = "You win! Rock beats Scissors!";
             return;
         } else if (playerselection === "paper") {
             computerScore++;
+            messageBoard.textContent = "You loose! Scissors beats Paper!";
             return;
         } else if (playerselection === "scissors") {
+            messageBoard.textContent = "It's a draw, scissors and scissors.";
             return;
         }
     }
