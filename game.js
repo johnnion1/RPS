@@ -72,7 +72,6 @@ function rockps(playerselection, computerselection) {
             return;
         }
     }
-    updateScore(playerScore, computerScore);
     }
 
     const buttons = document.querySelectorAll('button');
@@ -81,8 +80,9 @@ function rockps(playerselection, computerselection) {
 
             button.addEventListener('click', () => {
                 /* console.log(button.id); */
-                rockps(button.id, computerSelect())});
-
+                rockps(button.id, computerSelect());
+                updateScore(playerScore, computerScore);
+            });
         });
 
 
