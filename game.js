@@ -15,11 +15,8 @@ function computerSelect() {
 let playerScore = 0;
 let computerScore = 0;
 
-
 const pcspan = document.querySelector('#pcspan'); 
 const plspan = document.querySelector('#plspan');
-
-
 
 let pcscore = document.createElement('div');
 let plscore = document.createElement('div');
@@ -27,18 +24,19 @@ let plscore = document.createElement('div');
 pcspan.appendChild(pcscore);
 plspan.appendChild(plscore);
 
-function updateScore(player, comp) {
-    
-pcscore.textContent = player;
-plscore.textContent = comp;
 
+function updateScore(player, comp) {
+    pcscore.textContent = player;
+    plscore.textContent = comp;
 }
 
+const messageBoard = document.querySelector('#messageBoard');
+
+messageBoard.style.height = '150px';
+messageBoard.style.width = '400px';
+messageBoard.style.backgroundColor = 'pink';
 
 function rockps(playerselection, computerselection) {
-    
-    
-
 
     if (computerselection === "Rock") {
         if (playerselection === "rock") {
@@ -64,7 +62,6 @@ function rockps(playerselection, computerselection) {
         if (playerselection === "rock") {
             playerScore++;
             return;
-        
         } else if (playerselection === "paper") {
             computerScore++;
             return;
@@ -84,18 +81,3 @@ function rockps(playerselection, computerselection) {
                 updateScore(playerScore, computerScore);
             });
         });
-
-
-
-
-
-     /*  let getselection = document.querySelector('button.id');
-    if (getselection === 1) {
-        playerselection = "rock";
-    }
-    else if (getselection === 2) {
-        return "paper";
-    }
-    else if (getselection === 3) {
-        return "scissors";
-    }  */
