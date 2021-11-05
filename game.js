@@ -16,24 +16,21 @@ let playerScore = 0;
 let computerScore = 0;
 
 
-let pcspan = document.querySelector('#pcspan'); 
-let plspan = document.querySelector('#plspan');
+const pcspan = document.querySelector('#pcspan'); 
+const plspan = document.querySelector('#plspan');
 
+
+
+let pcscore = document.createElement('div');
+let plscore = document.createElement('div');
 
 pcspan.appendChild(pcscore);
-
 plspan.appendChild(plscore);
-
 
 function updateScore(player, comp) {
     
-let pcscore = document.createElement('div');
-
-let plscore = document.createElement('div');
-
-plscore.textContent = playerScore;
-pcscore.textContent = computerScore;
-
+pcscore.textContent = player;
+plscore.textContent = comp;
 
 }
 
