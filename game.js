@@ -19,12 +19,24 @@ let computerScore = 0;
 
 const pcspan = document.querySelector('#pcspan'); 
 const plspan = document.querySelector('#plspan');
-const winnerMsg = document.querySelector('#winnerMsg');
+const winnerMsg = document.querySelector('#winnerMsg');/* 
+const restartButton = document.querySelector('#restartButton'); */
 
+const restartButton = document.createElement('button');
+let restartQuestion = document.createElement('div');
 let pcscore = document.createElement('div'); //     *** do I really need these
 let plscore = document.createElement('div');
 pcspan.appendChild(pcscore);
 plspan.appendChild(plscore);
+
+restartButton.textContent = "Restart";
+restartButton.addEventListener('click', () => {
+    playerScore = 0;
+    computerScore = 0;
+   /*  call updateScore() */
+   plscore.textContent = player;
+    pcscore.textContent = comp;
+});
 
 function updateScore(player, comp) {
     if (playerScore === 5) {
@@ -44,10 +56,14 @@ function updateScore(player, comp) {
      else if (computerScore === 5) {
         winnerMsg.textContent = "Okay Computer wins!";
         messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
-        if(confirm("Play new round?")) {
+        restartQuestion.textContent = "Play new round?"
+        messageBoard.appendChild(restartQuestion);
+        messageBoard.appendChild(restartButton);
+        
+        /* if(confirm("Play new round?")) {
             playerScore = 0;
             computerScore = 0;
-        } 
+        }  */
     }
     plscore.textContent = player;
     pcscore.textContent = comp;
