@@ -15,6 +15,8 @@ function computerSelect() {
 let playerScore = 0;
 let computerScore = 0;
 
+
+
 const pcspan = document.querySelector('#pcspan'); 
 const plspan = document.querySelector('#plspan');
 
@@ -26,8 +28,18 @@ plspan.appendChild(plscore);
 
 
 function updateScore(player, comp) {
-    pcscore.textContent = player;
-    plscore.textContent = comp;
+    if (playerScore === 5) {
+
+        messageBoard.textContent = "Okay Player win!";
+        playerScore = 0;
+        computerScore = 0;
+    } else if (computerScore === 5) {
+        messageBoard.textContent = "Okay Computer wins!";
+        playerScore = 0;
+        computerScore = 0;
+    }
+    plscore.textContent = player;
+    pcscore.textContent = comp;
 }
 
 const messageBoard = document.querySelector('#messageBoard');
