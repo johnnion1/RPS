@@ -10,17 +10,19 @@ function computerSelect() {
     }
 }
 
-
-    
 let playerScore = 0;
 let computerScore = 0;
-
 
 
 const pcspan = document.querySelector('#pcspan'); 
 const plspan = document.querySelector('#plspan');
 const winnerMsg = document.querySelector('#winnerMsg');/* 
 const restartButton = document.querySelector('#restartButton'); */
+const messageBoard = document.querySelector('#messageBoard');
+
+messageBoard.style.height = '150px';
+messageBoard.style.width = '400px';
+messageBoard.style.backgroundColor = 'pink';
 
 const restartButton = document.createElement('button');
 let restartQuestion = document.createElement('div');
@@ -33,12 +35,14 @@ restartButton.textContent = "Restart";
 restartButton.addEventListener('click', () => {
     playerScore = 0;
     computerScore = 0;
-   /*  call updateScore() */
-   plscore.textContent = player;
-    pcscore.textContent = comp;
+   plscore.textContent = playerScore;
+    pcscore.textContent = computerScore;
+    winnerMsg.textContent = "";
+    messageBoard.removeChild(restartQuestion);
+    messageBoard.removeChild(restartButton);
 });
 
-function updateScore(player, comp) {
+function updateScore() {
     if (playerScore === 5) {
         winnerMsg.textContent = "Okay Player win!";
         messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
@@ -51,16 +55,9 @@ function updateScore(player, comp) {
         messageBoard.appendChild(restartQuestion);
         messageBoard.appendChild(restartButton);
         }
-    
-    plscore.textContent = player;
-    pcscore.textContent = comp;
+    plscore.textContent = playerScore;
+    pcscore.textContent = computerScore;
 }
-
-const messageBoard = document.querySelector('#messageBoard');
-
-messageBoard.style.height = '150px';
-messageBoard.style.width = '400px';
-messageBoard.style.backgroundColor = 'pink';
 
 function rockps(playerselection, computerselection) {
 if (!(playerScore > 4 || computerScore > 4)) {
