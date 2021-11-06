@@ -29,14 +29,21 @@ plspan.appendChild(plscore);
 
 function updateScore(player, comp) {
     if (playerScore === 5) {
-
         messageBoard.textContent = "Okay Player win!";
-        playerScore = 0;
-        computerScore = 0;
+        if(confirm("Play new round?")) {
+            playerScore = 0;
+            computerScore = 0;
+        } else {
+            messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
+        }
     } else if (computerScore === 5) {
         messageBoard.textContent = "Okay Computer wins!";
-        playerScore = 0;
-        computerScore = 0;
+        if(confirm("Play new round?")) {
+            playerScore = 0;
+            computerScore = 0;
+        } else {
+            messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
+        }
     }
     plscore.textContent = player;
     pcscore.textContent = comp;
