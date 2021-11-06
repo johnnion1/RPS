@@ -26,8 +26,8 @@
             button:active {
                 background-color:cadetblue;
             }
-            #scoreboard {
-                
+            #messageboard {
+            flex-flow:wrap;
 
             }
         </style>
@@ -38,8 +38,8 @@
 
     <div id="scoreboard">
         <p>Hello, hands against me</p>
-        <span id="plscore">You: </span>
-        <span id="pcscore">PC: </span>
+        <span id="plspan">You: </span>
+        <span id="pcspan">PC: </span>
     </div>
     <div id="container">
        
@@ -47,5 +47,8 @@
         <button id="paper">Paper</button> 
         <button id="scissors">Scissors</button> 
     </div>
+
+    <div id="messageBoard"></div>
+    <div id="winnerMsg"></div>
     </body>
 </html>
