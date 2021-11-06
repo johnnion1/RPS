@@ -19,31 +19,35 @@ let computerScore = 0;
 
 const pcspan = document.querySelector('#pcspan'); 
 const plspan = document.querySelector('#plspan');
+const winnerMsg = document.querySelector('#winnerMsg');
 
-let pcscore = document.createElement('div');
+let pcscore = document.createElement('div'); //     *** do I really need these
 let plscore = document.createElement('div');
-
 pcspan.appendChild(pcscore);
 plspan.appendChild(plscore);
 
-
 function updateScore(player, comp) {
     if (playerScore === 5) {
-        messageBoard.textContent = "Okay Player win!";
+        winnerMsg.textContent = "Okay Player win!";
+        messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
+        buttons.forEach((button) => {
+
+            button.addEventListener('click', () => {
+            
+            if(confirm("Play new round?")) {
+                playerScore = 0;
+                computerScore = 0;
+                }
+            });
+        });
+        }
+     else if (computerScore === 5) {
+        winnerMsg.textContent = "Okay Computer wins!";
+        messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
         if(confirm("Play new round?")) {
             playerScore = 0;
             computerScore = 0;
-        } else {
-            messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
-        }
-    } else if (computerScore === 5) {
-        messageBoard.textContent = "Okay Computer wins!";
-        if(confirm("Play new round?")) {
-            playerScore = 0;
-            computerScore = 0;
-        } else {
-            messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
-        }
+        } 
     }
     plscore.textContent = player;
     pcscore.textContent = comp;
