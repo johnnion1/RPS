@@ -42,29 +42,16 @@ function updateScore(player, comp) {
     if (playerScore === 5) {
         winnerMsg.textContent = "Okay Player win!";
         messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
-        buttons.forEach((button) => {
-
-            button.addEventListener('click', () => {
-            
-            if(confirm("Play new round?")) {
-                playerScore = 0;
-                computerScore = 0;
-                }
-            });
-        });
         }
      else if (computerScore === 5) {
         winnerMsg.textContent = "Okay Computer wins!";
-        messageBoard.textContent = "Feel free to play another round. Just choose your hand.";
-        restartQuestion.textContent = "Play new round?"
+        messageBoard.textContent = "Feel free to play another round. Just choose your hand.";}
+    if (playerScore === 5 || computerScore === 5) {
+     restartQuestion.textContent = "Play new round?"
         messageBoard.appendChild(restartQuestion);
         messageBoard.appendChild(restartButton);
-        
-        /* if(confirm("Play new round?")) {
-            playerScore = 0;
-            computerScore = 0;
-        }  */
-    }
+        }
+    
     plscore.textContent = player;
     pcscore.textContent = comp;
 }
@@ -76,7 +63,7 @@ messageBoard.style.width = '400px';
 messageBoard.style.backgroundColor = 'pink';
 
 function rockps(playerselection, computerselection) {
-
+if (!(playerScore > 4 || computerScore > 4)) {
     if (computerselection === "Rock") {
         if (playerselection === "rock") {
             messageBoard.textContent = "It's a draw, Rock and Rock.";
@@ -116,7 +103,7 @@ function rockps(playerselection, computerselection) {
             messageBoard.textContent = "It's a draw, scissors and scissors.";
             return;
         }
-    }
+    }}
     }
 
     const buttons = document.querySelectorAll('button');
